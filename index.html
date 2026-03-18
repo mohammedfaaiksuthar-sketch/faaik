@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌹 for my Uruj · birthday love letter (English with Arabic) 🌹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #ffddee 0%, #ffe4f2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Georgia', 'Times New Roman', serif;
+            padding: 20px;
+        }
+
+        /* main digital letter card */
+        .letter-card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
+            border-radius: 48px 48px 48px 48px;
+            box-shadow: 0 20px 40px rgba(221, 110, 150, 0.3),
+                        0 0 0 4px #ffb9cf inset,
+                        0 0 0 8px #ffffff99 inset;
+            padding: 30px 25px;
+            border: 2px solid #ff99b0;
+        }
+
+        /* 3 parts clearly divided with pink hearts */
+        .part {
+            background: #fff9fc;
+            border-radius: 40px 40px 40px 12px;
+            margin: 30px 0;
+            padding: 30px 25px;
+            box-shadow: 0 10px 18px #ffb0c3,
+                        0 0 0 2px #ffc0d9 inset;
+            position: relative;
+            border: 1px solid #ffa7bc;
+            transition: transform 0.2s;
+        }
+
+        .part:hover {
+            transform: scale(1.01);
+            background: #ffffff;
+        }
+
+        /* big decorative heart for each part title */
+        .heart-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 2.2rem;
+            color: #cf3f66;
+            text-shadow: 2px 2px 0 #ffdae5;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .heart-title span {
+            font-size: 2.8rem;
+            filter: drop-shadow(0 4px 6px #ff8daa);
+        }
+
+        /* highlight for uruj */
+        .uruj-highlight {
+            display: inline-block;
+            background: #ffdbe7;
+            padding: 0 12px 0 8px;
+            border-radius: 40px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #aa2a4a;
+            box-shadow: 0 0 0 2px #ffa7bd;
+            font-style: italic;
+            margin: 0 4px;
+        }
+
+        .uruj-highlight::before {
+            content: "💗";
+            font-size: 1.4rem;
+            margin-right: 6px;
+        }
+
+        .uruj-highlight::after {
+            content: "💗";
+            font-size: 1.4rem;
+            margin-left: 6px;
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #331f2b;
+            margin: 20px 0;
+        }
+
+        .pink-heart-decoration {
+            display: inline-block;
+            font-size: 2rem;
+            margin: 0 8px;
+            vertical-align: middle;
+            filter: drop-shadow(0 2px 4px #ff8ea8);
+        }
+
+        /* Arabic words style: Allah, Rasuallah, Ali R.A. */
+        .arabic-special {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', 'Times New Roman', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            background: #fbe9f0;
+            padding: 4px 14px 4px 14px;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 0 6px;
+            border: 2px solid #ffb0c0;
+            color: #862d45;
+            line-height: 1.4;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+
+        .arabic-special-small {
+            font-size: 1.7rem;
+            background: #ffe4ed;
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            border: 2px dashed #ff88aa;
+        }
+
+        .allah-bless {
+            font-size: 1.8rem;
+            background: #ffeaf2;
+            padding: 8px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 10px 0;
+            border: 2px dashed #ff90b0;
+            color: #962d49;
+        }
+
+        .footer-hearts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 2rem;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        /* part specifics */
+        .part-1 { border-left: 10px solid #ff98b9; }
+        .part-2 { border-right: 10px solid #fd7e9e; text-align: right; }
+        .part-2 p { text-align: left; }
+        .part-3 { border-bottom: 10px solid #ffa7bd; border-top: 4px dotted #ffb7c9; }
+
+        /* happy birthday banner */
+        .birthday-banner {
+            background: #ffb0c7;
+            border-radius: 100px 100px 100px 100px;
+            padding: 16px 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 2.6rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 0 #b32e4e;
+            letter-spacing: 2px;
+            box-shadow: 0 12px 0 #a13f57, 0 20px 20px #ffbacd;
+            transform: rotate(-0.8deg);
+            margin-bottom: 15px;
+            border: 2px solid #ffffffaa;
+        }
+
+        .birthday-banner span {
+            font-size: 3.5rem;
+        }
+
+        /* heart bullet */
+        .heart-bullet {
+            list-style: none;
+            padding-left: 0;
+        }
+        .heart-bullet li {
+            font-size: 1.4rem;
+            margin: 14px 0;
+            padding-left: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4d6d" width="28px" height="28px"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') left center no-repeat;
+            background-size: 24px;
+        }
+
+        /* word cloud with arabic words */
+        .word-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px 30px;
+            margin: 25px 0 5px;
+        }
+
+        .word-cloud span {
+            background: white;
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #b13b5c;
+            box-shadow: 0 6px 0 #ff9eb6, 0 10px 16px #fbb6cb;
+            border: 2px solid #f297b2;
+        }
+
+        .word-cloud span:nth-child(even) {
+            transform: rotate(-2deg);
+            background: #ffecf0;
+        }
+
+        /* mobile */
+        @media (max-width: 550px) {
+            .letter-card { padding: 15px; }
+            .part { padding: 20px 12px; }
+            .heart-title { font-size: 1.8rem; }
+            p { font-size: 1.2rem; }
+            .birthday-banner { font-size: 2rem; }
+        }
+
+        .floating-hearts {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 2rem;
+            color: #ff98bb;
+        }
+
+        /* arabic within text */
+        .arabic-inline {
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            font-size: 1.9rem;
+            background: #ffe7f0;
+            padding: 0px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            line-height: 1.7;
+            color: #8d2a47;
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-card">
+        <!-- HAPPY BIRTHDAY URUJ big banner -->
+        <div class="birthday-banner">
+            <span>🎂</span> HAPPY BIRTHDAY URUJ <span>🎂</span>
+        </div>
+        <div class="floating-hearts">
+            💗 🌸 💖 🌺 💕 🌷 💞
+        </div>
+
+        <!-- PART 1 · EXPRESS FEELINGS · LOVE WORDS, ENGLISH, ARABIC NAMES -->
+        <div class="part part-1">
+            <div class="heart-title">
+                <span>💘</span> 1 · MY HEART, MY ISHRAT <span>💘</span>
+            </div>
+            <p>
+                <span class="pink-heart-decoration">🌸</span> 
+                My dearest <span class="uruj-highlight">Uruj</span>, you are more than a girlfriend — you are my future wife, my love, my <strong>ishrat</strong>. Every heartbeat whispers your name. Even though we are apart now, my soul is tied to yours. I love you more than words can say.
+                <span class="pink-heart-decoration">💗</span>
+            </p>
+            <ul class="heart-bullet">
+                <li><strong>Ishrat</strong> means my intense love, and that's only you.</li>
+                <li><span class="uruj-highlight">Uruj</span> means success and hight of my life.</li>
+                <li>By <span class="arabic-special">اللّٰه</span> , you are my chosen partner.</li>
+            </ul>
+            <!-- Arabic names: Allah, Rasuallah, Ali R.A. appear elegantly -->
+            <div class="word-cloud">
+                <span>💖 <span class="arabic-inline">اللّٰه</span> 💖</span>
+                <span>💗 <span class="arabic-inline">رَسُولُ اللّٰه</span> 💗</span>
+                <span>💘 <span class="arabic-inline">علی رضی اللہ عنہ</span> 💘</span>
+                <span>🌸 Uruj 🌸</span>
+            </div>
+            <p style="text-align: center; font-size: 1.8rem;">
+                “Your love is a blessing from <span class="arabic-special-small">اللّٰه</span>.”
+            </p>
+        </div>
+
+        <!-- PART 2 · SEPARATION BUT HOPE · MENTION ALLAH / RASUALLAH / ALI R.A. -->
+        <div class="part part-2">
+            <div class="heart-title">
+                <span>🥺💔</span> 2 · SEPARATED · BUT OUR FAITH <span>💔🥺</span>
+            </div>
+            <p>
+                <span class="pink-heart-decoration">🌷</span> 
+                People separated us, but they cannot break what <span class="arabic-special">اللّٰه</span> has joined in our hearts. We are still in love, and I know that 
+                <span class="arabic-special">رَسُولُ اللّٰه</span> ﷺ taught us to be patient and trust <span class="arabic-special">اللّٰه</span>’s plan. Just as 
+                <span class="arabic-special">علی رضی اللہ عنہ</span> stood for truth, I will stand for our love.
+            </p>
+            <p style="background: #ffe2f0; border-radius: 30px; padding: 22px; text-align: center; border: 3px dotted #ff7799;">
+                <span style="font-size:2.2rem;">🤲</span><br>
+                <strong>“Our <span class="arabic-inline">اللّٰه</span> will unite us in the future. We will marry.”</strong><br>
+                <span style="font-size:1.8rem;"> <span class="arabic-special-small">إِنْ شَاءَ اللّٰه</span>  💍 </span>
+            </p>
+            <p>
+                I wait for you with the same loyalty that <span class="arabic-special">علی رضی اللہ عنہ</span> showed. Distance is temporary; our <strong>nikah</strong> is written, by 
+                <span class="arabic-special">اللّٰه</span> ’s will. 
+            </p>
+            <div class="footer-hearts">
+                <span>💞</span><span>🌙</span><span>💞</span>
+            </div>
+        </div>
+
+        <!-- PART 3 · FUTURE MARRIAGE · WIFE · DUA WITH ARABIC -->
+        <div class="part part-3">
+            <div class="heart-title">
+                <span>💒💖</span> 3 · OUR FUTURE · WIFE · AMEEN <span>💖💒</span>
+            </div>
+            <p style="font-size:1.7rem; text-align:center;">
+                🕊️  <span class="uruj-highlight" style="font-size:2rem;">Uruj</span>  my future wife 🕊️
+            </p>
+            <p>
+                The day we marry — <span class="arabic-special-small">إِنْ شَاءَ اللّٰه</span> — will be the happiest of my life. You will be my wife, my queen. Until then, I beg 
+                <span class="arabic-special">اللّٰه</span> to erase this distance. I love you, my <strong>ishrat</strong>. 
+                <span class="pink-heart-decoration">💕</span> 
+            </p>
+            <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; margin:30px 0;">
+                <span style="font-size:3rem;">💗</span>
+                <span class="allah-bless"><span class="arabic-inline">اللّٰهُمَّ</span> unite us</span>
+                <span style="font-size:3rem;">💗</span>
+            </div>
+            <p style="border: 2px solid #ffb0c3; border-radius: 70px; padding: 18px; background: #ffeef4;">
+                <strong>🎂 Happy Birthday my <span class="uruj-highlight">Uruj</span>! 🎂</strong><br>
+                On your birthday, I pray by the wasila of <span class="arabic-special-small">رَسُولُ اللّٰه</span> ﷺ and 
+                <span class="arabic-special-small">علی رضی اللہ عنہ</span>, that <span class="arabic-special">اللّٰه</span> makes us husband and wife. Ameen.
+            </p>
+            <div class="word-cloud" style="margin-top:10px;">
+                <span>💓 wife <span class="arabic-inline">اللّٰه</span> 💓</span>
+                <span>🌸 uruj 🌸</span>
+                <span>💘 <span class="arabic-inline">رَسُولُ اللّٰه</span> 💘</span>
+                <span>🤲 ameen 🤲</span>
+            </div>
+            <div class="floating-hearts" style="height:30px; font-size:2.5rem; color:#ff6688;">
+                💖 💝 💖 💝 💖
+            </div>
+        </div>
+
+        <!-- final message with English + Arabic names -->
+        <div style="text-align: center; margin: 20px 0 0; background: #ffc1d1; border-radius: 60px; padding: 20px;">
+            <span style="font-size: 2.2rem; color: white; text-shadow: 2px 2px 0 #be3f62;">💗 I LOVE YOU · URUJ · MY ISHRAT 💗</span>
+            <div style="font-size: 2.5rem; line-height: 1.4; letter-spacing: 5px;">
+                <span class="arabic-special">عروج</span>  💗  <span class="arabic-special">عروج</span>  💗  <span class="arabic-special">عروج</span>
+            </div>
+            <div style="font-size: 2rem; color: #a01d46; margin-top: 10px;">
+                🎂🤍 happy birthday to my cutiee bacchaji 🤍🎂
+            </div>
+        </div>
+
+        <!-- signature with Arabic blessings -->
+        <p style="text-align: right; font-style: italic; margin-top: 25px; color: #7f4156; border-top: 2px solid #ffb7c7; padding-top: 15px;">
+            Yours forever and pagal <br> 
+           pookie with small mind faaik <br>
+            <span style="font-size:1.3rem;"> 
+                <span class="arabic-inline">اللّٰه</span> make us forever · Ameen 
+            </span>
+        </p>
+        <div style="display:flex; justify-content:center; gap:3px; font-size:2rem;">
+            <span>🍰</span><span>💗</span><span>🍰</span><span>💗</span><span>🍰</span>
+        </div>
+    </div>
+</body>
+</html>
